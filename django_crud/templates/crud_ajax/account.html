@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{%static 'assets/img/final.png'%}">
+    <title>User</title>
+    <link rel="stylesheet" href="{%static 'css/acc.css'%}">
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- jQery files-->
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{%static 'js/JQUERY%20Main.js'%}"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body style="overflow-x:hidden;">
+{% include "header.html" %}
+
+<div class="bg_img" >
+
+    <img src="{%static 'images/fin-doc.jpg'%}" style="width:1620px; height:80%;">
+  </div>
+<div id="main" >
+            <form  action="/crud"  >
+                {% csrf_token %}
+            <table border="0" cellspacing="10">
+                <tr>
+                    <td>
+                        <div id="title" >LOG IN</div>
+                        <hr />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="username" name="username"  />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="password" placeholder="password"  />
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td >
+
+
+                    {% for m in messages %}
+
+                    <div class="alert alert-success">
+                        <a class="close" href="#" data-dismiss="alert">×</a>
+
+                        {{ m }}
+
+                    </div>
+            {% endfor %}
+                    </td>
+                </tr>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td align="right">
+
+                        <div id="frt"><a href="#">Forgotten your password?</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <a href="/crud"><input type="submit" name="submit" style="" value="Login" id="signInBtn"/></a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">
+                        <div id="signUpMsg">DON'T HAVE AN ACCOUNT <a href="#" id="flipToSignUp" style="">SIGN UP</a></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+
+
+
+
+
+
+<div id="signUpForm" >
+
+  <form  action="" method="post" >
+       {% for m in messages %}
+
+                    <div class="alert alert-success">
+                        <a class="close" href="#" data-dismiss="alert">×</a>
+
+                        {{ m }}
+
+                    </div>
+            {% endfor %}
+      {% csrf_token %}
+            <table border="0" cellspacing="10">
+                <tr>
+                    <td>
+                        <div id="tit_le" style=" font-size: 40px;">SIGN UP</div>
+                        <hr />
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <input type="text" name="name" placeholder="USER NAME"   required="" pattern="^[a-zA-Z]+$"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <input type="email" name="email" placeholder="EMAIL ID" required="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="password" placeholder="PASSWORD" required="" />
+                    </td>
+                </tr>
+                <br>
+
+                <tr>
+                    <td align="center">
+                        <input type="submit" style="" name="submit" value="SIGN UP" id="signUpBtn"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <div id="signInMsg">HAVE AN ACCOUNT <a href="#" id="flipToSignIn" >LOGIN</a></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+
+<script>
+
+    setTimeout(function(){
+
+    if($('#msg').length > 0 ){
+
+    $('#msg').remove();
+    }
+    },2000)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {%load static%}
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <link rel="stylesheet" type="text/css" href="{%static 'css/Responsive.css'%}">
+      <link rel="stylesheet" type="text/css" href="{%static 'css/footer.css'%}">
+</head>
+<body>
+<!-- start header -->
+
+ {% block content %}
+
+
+
+<!--- header end ---->
+<!--- Footer start ---->
+
+ <!-- footer -->
+      <footer>
+         <div id="contact" class="footer">
+            <div class="container">
+               <div class="row pdn-top-30">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                     <ul class="location_icon">
+
+
+                     </ul>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                     <div class="Follow">
+                        <h3>CONTACT US</h3>
+                        <span>cardiowellness@gmail.com <br>
+
+                        051 2874321</span>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                     <div class="Follow">
+                        <h3>ADDITIONAL LINKS</h3>
+                        <ul class="link">
+                           <li> <a href="#">About us</a></li>
+                           <li> <a href="#"> Contact us</a></li>
+                           <li> <a href="/crud">Records</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                     <div class="Follow">
+                        <h3> Contact</h3>
+                        <form method="POST" action="">
+                         {% csrf_token %}
+                        <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                              <input  class="Newsletter" type="text" name="name" value="" placeholder="Enter Your Name" pattern="^[a-zA-Z]+$" style=" border-radius: 35px;" required="">
+
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+
+                               <input class="Newsletter" type="email" name="email" value="" placeholder="Enter Your Email" style=" border-radius: 35px;" required="">
+                           </div>
+                           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" >
+                              <textarea class="Newsletter" placeholder="Message" style=" border-radius: 35px;"></textarea>
+                           </div>
+
+
+                        </div>
+
+                           <input class="Subscribe" style=" border-radius: 35px; width:30%;" type="submit" value="Submit"/>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+               <div class="copyright">
+                  <div class="container">
+                     <p>Copyright 2021 All Right Reserved By <a href="#">CardioWellness</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+{% endblock %}
+</body>
+</html>

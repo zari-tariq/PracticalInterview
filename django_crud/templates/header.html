@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <title>Patient</title>
+
+      <link rel="stylesheet" type="text/css" href="{%static 'css/navhead.css'%}">
+
+</head>
+<body>
+<!-- start header -->
+{%load static%}
+ {% block content %}
+
+  <nav>
+
+      <div class="logo"><a href="/home"><img src="{%static 'images/finalnewlogo.png'%}" ></a></div>
+	<ul class="links">
+		<li class="current"><a href="#">Home</a></li>
+		<li class="current"><a href="#">About</a></li>
+		<li class="current"><a href="#">Contact</a></li>
+		<li class="current"><a href="/crud">Records</a></li>
+        <li class="current"><a href="/">Accounts</a></li>
+
+	</ul>
+	<label for="nav-toggle" class="icon-burger">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</label>
+</nav>
+ <div  class="vison-value-mission">
+   <h2> Patients Record</h2>
+
+</div>
+ {% endblock %}
+<!--- header end ---->
+<!--- Footer start ---->
+
+
+</body>
+</html>
